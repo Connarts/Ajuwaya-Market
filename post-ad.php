@@ -2,7 +2,7 @@
 	session_start();
 	ob_start();
 ?>
-<!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="utf-8" />
@@ -10,8 +10,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-select.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-
-    <!-- for-mobile-apps -->
+<!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Buy from Corpers. Sell to Corpers. By Corpers. From all over Nigeria." />
@@ -58,7 +57,7 @@
 <script src="js/jquery.uls.languagefilter.js"></script>
 <script src="js/jquery.uls.regionfilter.js"></script>
 <script src="js/jquery.uls.core.js"></script>
-<!--<script> 
+<script>
 			$( document ).ready( function() {
 				$( '.uls-trigger' ).uls( {
 					onSelect : function( language ) {
@@ -68,7 +67,7 @@
 					quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
 				} );
 			} );
-		</script>-->
+		</script>
 		<link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css " />
     <script src="js/easyResponsiveTabs.js"></script>
 </head>
@@ -80,7 +79,7 @@
 			</div>
 			<div class="header-right">
 			<a class="account" href="login.html">My Account</a>
-			<!-- <span class="active uls-trigger">Select language</span>-->
+			<span class="active uls-trigger">Select language</span>
 
 		</div>
 		</div>
@@ -89,15 +88,15 @@
 	  <div class="container">    
 			<h1>Buy or Sell   <span class="segment-heading">    anything online </span> with Ajuwaya Market</h1>
 			<p>Buy from Corpers. Sell to Corpers. By Corpers. From all over Nigeria.</p>
-			<a href="post-ad.html">Post Free Advert</a>
+			<a href="post-ad.html">Post Free Ad</a>
 	  </div>
 	</div>
 	<!-- Submit Ad -->
 	<div class="submit-ad main-grid-border">
 		<div class="container">
-			<h2 class="head">Post an Advert</h2>
+			<h2 class="head">Post an Ad</h2>
 			<div class="post-ad-form">
-				<form name="uploads" enctype="multipart/form-data">
+				<form name="" method="POST" action='post-ad.php' >
 					<label>Select Category <span>*</span></label>
 					<select class="" name="category">
 					  <option>Select Category</option>
@@ -106,6 +105,7 @@
 					  <option>Cars</option>
 					  <option>Bikes</option>
 					  <option>Furniture</option>
+					  <option>Pets</option>
 					  <option>Books, Sports and hobbies</option>
 					  <option>Fashion</option>
 					  <option>Kids</option>
@@ -113,18 +113,18 @@
 					  <option>Real Estate</option>
 					</select>
 					<div class="clearfix"></div>
-					<label>Advert Name <span>*</span></label>
+					<label>Ad Name <span>*</span></label>
 					<input type="text" name="name" placeholder="">
 					<div class="clearfix"></div>
-					<label>Advert Price <span>*</span></label>
+					<label>Ad Price <span>*</span></label>
 					<input type="text" name="price" placeholder="">
 					<div class="clearfix"></div>
-					<label>Advert Description <span>*</span></label>
+					<label>Ad Description <span>*</span></label>
 					<textarea name="description" placeholder="Write few lines about your product"></textarea>
-					<div class="clearfix"> </div>
+					<div class="clearfix"></div>
 				
 				<div class="upload-ad-photos">
-				<label>Photos for your advert :</label>	
+				<label>Photos for your ad :</label>	
 					<div class="photos-upload-view">
 						
 
@@ -135,18 +135,23 @@
 							<!--<div id="filedrag">or drop files here</div>-->
 						</div>
 
-				
+						
+
+						
+
+					<!--	
 						
 						<div id="submitbutton">
 							<button type="submit">Upload Files</button>
-						</div> 
-                        <div id="messages">
+						</div><div id="messages">
+
+
 						<p>Status Messages</p>
+						</div>-->
 						</div>
-						</div>
-				<div><input type="submit" value="Post">	</div>		
+						<input type="submit" value="Post">	
 					<div class="clearfix"></div>
-						<script src="js/filedrag.js"></script>
+						<!--<script src="js/filedrag.js"></script>-->
 						
 				</div>
 			</form>
@@ -170,8 +175,6 @@
 			</div>
 		</div>	
 	</div>
-    
-    
 	<!-- // Submit Ad -->
 	<!--footer section start-->		
 		<footer>
@@ -180,8 +183,8 @@
 					<div class="foo-grids">
 						<div class="col-md-3 footer-grid">
 							<h4 class="footer-head">Who We Are</h4>
-							<p>we are a building a large coomunity market where corp members can absolutly display the goods and services that the sell. This market can be be taen as a online mami market.</p>
-							<p>We are connarts.</p>
+							<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+							<p>The point of using Lorem Ipsum is that it has a more-or-less normal letters, as opposed to using 'Content here.</p>
 						</div>
 						<div class="col-md-3 footer-grid">
 							<h4 class="footer-head">Help</h4>
@@ -241,14 +244,14 @@
 					</ul>
 				</div>
 				<div class="copyrights">
-					<p> with &hearts; from ConnartsNg &copy; 2018</p>
+					<p>&copy 2018</p>
 				</div>
 				<div class="clearfix"></div>
 			</div>
 		</div>
 		</footer>
 		<!--footer section end-->
-	
+		
 		<script>
 				var form1 = document.forms.namedItem("uploads");
 				form1.addEventListener('submit', function(ev) {
@@ -259,7 +262,7 @@
 					//oData.append("CustomField", "This is some extra data");
 
 					var oReq1 = new XMLHttpRequest();
-					oReq1.open("POST", "phps/uploads.php", true);
+					oReq1.open("POST", "phps/upload.php", true);
 					oReq1.onload = function(oEvent) {
 					if (oReq1.status == 200) {
 						//oOutput.innerHTML = "Uploaded!";
@@ -287,7 +290,7 @@
 					var oReq2 = new XMLHttpRequest();
 					oReq2.open("POST", "phps/personal-details.php", true);
 					oReq2.onload = function(oEvent) {
-					if (oReq2.status == 900) {
+					if (oReq2.status == 200) {
 						//oOutput.innerHTML = "Uploaded!";
 						alert("Done!");
 					} else {
@@ -299,6 +302,53 @@
 					oReq2.send(oData2);
 					ev.preventDefault();
 				}, false);
-		</script> 
+		</script>
 </body>
 </html>
+<?php
+$con = mysqli_connect("localhost", "connarts_ossai", "ossai'spassword", "connarts_nysc");
+
+// A list of permitted file extensions
+$allowed = array('png', 'jpg', 'gif','zip');
+
+if(!empty($_FILES['pictureselect']) ){
+	
+	foreach ($_FILES['pictureselect']['error'] as $key => $error) {
+		# code...
+		mysqli_query($con,"INSERT INTO ads(name, email) VALUES ('$name', 'did1')");
+		if ($error == UPLOAD_ERR_OK) {
+			# code...
+			$extension = pathinfo($_FILES['pictureselect']['name'][$key], PATHINFO_EXTENSION);
+	
+			if(!in_array(strtolower($extension), $allowed)){
+				#echo '{"status":"error"}';
+				http_response_code(406); //"not acceptable" error
+				continue;
+			}
+	
+			$tmp_name = $_FILES['pictureselect']['error'][$key];
+			$name = basename($_FILES['pictureselect']['name'][$key]);
+			$moved_ = move_uploaded_file($tmp_name, 'C:\\xampp\\htdocs\\ajuwaya\\uploads\\'.$name);
+			if ($moved_) {
+				# code...
+				$q = mysqli_query($con,"INSERT INTO ads(name, email) VALUES ('$name', 'john@e--xamp.com')");
+				if ($q) {
+					# code...
+					http_response_code(200); //'yea yea, ok'
+					
+				} else {
+					# code...
+					http_response_code(304); //"not modified" error
+					
+				}
+			}
+		}
+	}
+
+}
+
+#echo '{"status":"error"}';
+http_response_code(304); //"not modified" error
+exit;
+
+?>
