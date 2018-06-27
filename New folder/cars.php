@@ -1,3 +1,35 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "post";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}	
+
+			$k=0;
+			$query="select * from post_advert";
+			$runquery=mysqli_query($conn, $query);
+			if(!$runquery){
+				die('Error: '.mysqli_error($conn));				
+			}else{	
+			$m=mysqli_num_rows($runquery);
+			$n=0;
+			while ($row=mysqli_fetch_array($runquery)){
+				$category[$n]=$row['Category'];
+				$name[$n]=$row['advertName'];
+				$price[$n]=$row['advertPrice'];
+				$imageName[$n]=$row['photoAdvert'];
+				$n++;
+			}
+			}			
+		
+mysqli_close($conn);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--<script>
   $(document).ready(function () {
     var mySelect = $('#first-disabled2');
-
+   
     $('#special').on('click', function () {
       mySelect.find('option:selected').prop('disabled', true);
       mySelect.selectpicker('refresh');
@@ -685,7 +717,7 @@ var elem=$('#container ul');
 					</select>
 				</div>
 				<div class="featured-ads">
-					<h2 class="sear-head fer">Featured Ads</h2>
+					<h2 class="sear-head fer">Featured Advert</h2>
 					<div class="featured-ad">
 						<a href="single.html">
 							<div class="featured-ad-left">
@@ -783,7 +815,14 @@ var elem=$('#container ul');
 								</a>
 								<a href="single.html">
 									<li>
-									<img src="images/c2.jpg" title="" alt="" />
+											<?php 
+			 for ($l=0; $l<$m; $l++){?>
+				<div id = formatting>
+					 <img src="image/<?php echo $imageName[$l];?>" style="border-radius:20 20 0 0px;" width="120px" height="90px"/>
+				</div>
+                                        
+			<?php } ?>
+
 									<section class="list-left">
 									<h5 class="title">It is a long established fact that a reader</h5>
 									<span class="adprice">$310</span>
